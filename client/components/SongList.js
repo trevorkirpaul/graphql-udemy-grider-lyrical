@@ -9,7 +9,7 @@ class SongList extends Component {
     this.props.mutate({
       variables: { id },
       refetchQueries: [{ query }]
-    })
+    }).then(() => this.props.data.refetch())
   }
   renderSongs() {
     return this.props.data.songs.map(({ id, title}) => {
