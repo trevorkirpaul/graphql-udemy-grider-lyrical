@@ -9,7 +9,11 @@ import SongList from './components/SongList'
 import SongCreate from './components/SongCreate'
 import SongDetail from './components/SongDetail';
 
-const client = new ApolloClient({})
+const client = new ApolloClient({
+  dataIdFromObject: o => o.id
+  // ramifications: when ev we make a query we need
+  // to ask for the id in the GraphQL query
+})
 
 const Root = () => {
   return (
